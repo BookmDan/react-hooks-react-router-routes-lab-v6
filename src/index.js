@@ -1,7 +1,30 @@
-import "./index.css";
-import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import routes from "./routes";
+import React from 'react';
+import { createRoot } from 'react-dom';
+import { RouterProvider, Routes, Route, createBrowserRouter } from 'react-router-dom'; // Import the necessary components
+import Movies from './components/Movies';
+import Directors from './components/Directors';
+import Actors from './components/Actors';
+import AppRoutes from './AppRoutes'; 
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render();
+const router = createBrowserRouter([
+  {
+    path: "/movies",
+    element: <Movies />
+  },
+  {
+    path: "/directors",
+    element: <Directors />
+  },
+  {
+    path: "/actors",
+    element: <Actors />
+  }
+]);
+
+const root = createRoot(document.getElementById('root'));
+
+root.render(
+  <RouterProvider router={router}>
+    <AppRoutes />
+  </RouterProvider>
+);

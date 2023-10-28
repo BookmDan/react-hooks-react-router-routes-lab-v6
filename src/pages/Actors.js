@@ -1,16 +1,14 @@
-import { useEffect, useState } from "react";
+import React from 'react';
 
 function Actors() {
+  // Fetch actors data
+
   return (
-    <>
-      <header>
-        {/* What component should go here? */}
-      </header>
-      <main>
-        {/* Actor info here! */}
-      </main>
-    </>
+    <div>
+      <h1>Actors Page</h1>
+      {/* Map through actors and display their information */}
+    </div>
   );
-};
+}
 
 export default Actors;
